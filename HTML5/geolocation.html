@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script src="http://maps.googleapis.com/maps/api/js">
+var x = document.getElementById("demo");
+</script>
+<body>
+<div id="map" style="width:700px; height:680px;"></div>
+<script type="text/javascript">
+if (navigator.geolocation) 
+{
+	navigator.geolocation.getCurrentPosition(showCurrentPosition, displayError);
+}
+else
+{
+	alert("Geolocation is not supported by this browser");
+}
+
+function showCurrentPosition(position)
+{
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+    var mapSpecification = {
+			center : new google.maps.LatLng(position.coords.latitude,
+					position.coords.longitude),
+			zoom : 15
+		};
+
+		var map = new google.maps.Map(document.getElementById("map"),
+				mapSpecification);
+		var markerPosition = new google.maps.LatLng(
+				position.coords.latitude, position.coords.longitude);
+		var marker = new google.maps.Marker({
+			position : markerPosition,
+			map : map,
+		});
+		var infowindow = new google.maps.InfoWindow({
+			content : 'This is your current position'
+		});
+		infowindow.open(map, marker);
+
+}
+
+function displayError(err)
+{
+    switch(err.code)
+    {
+        case err.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation");
+            break;
+        case err.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable");
+            break;
+        case err.TIMEOUT:
+            alert("The request to get user location timed out");
+            break;
+        case err.UNKNOWN_ERROR:
+            alert("An unknown error occurred");
+            break;
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Object example</title>
+<script type="text/javascript">
+function city(cityname, population)
+{
+	this.cityname = cityname;
+	this.population = population;
+}
+	
+	var s = new city("San Jose", 1042094);
+	var b = new city("Los Angeles", 4011000);
+
+</script>
+</head>
+<body>
+	<script type="text/javascript"> 
+	document.write("Population in san jose is "+s.population);
+	document.write("<br>");
+	document.write("Name of the city is "+b.cityname);
+	</script>
+</body>
+</html>

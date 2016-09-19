@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Regular Expressions</title>
+TextField <input type="text" id="txtField" style="width:225px"/>
+<br/><br/>
+<input type="button" value="Generate" onclick="regex()" style="width:225px"/>
+<br/><br/>
+<textarea id="txtArea" rows="5" cols="35"></textarea>
+<script type="text/javascript">
+function regex()
+{
+	document.getElementById("txtArea").value="";
+	var inputString = document.getElementById("txtField").value;
+	var result = inputString.match(/\d+/g);
+	if(result!=null)
+		{
+			for(var i=0;i<result.length;i++)
+				{
+					document.getElementById("txtArea").value +=result[i] + "\r\n";
+				}
+		}
+}
+</script>
+</head>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Parsing JSON data</title>
+</head>
+<body>
+<script type="text/javascript">
+function soccer()
+{
+var soccer = '{"footballers":[' +
+'{"firstname":"Alexis","lastname":"Sanchez","Country":"Chile","Club":"Arsenal" },' +
+'{"firstname":"Mesut","lastname":"Ozil","Country":"Gemany","Club":"Arsenal" },' +
+'{"firstname":"Lionel","lastname":"Messi","Country":"Argentina","Club": "Barcelona" }]}';
+
+var obj = JSON.parse(soccer);
+document.getElementById("soccerplayers").innerHTML = obj.footballers[0].firstname+" "+obj.footballers[0].lastname+" and "+obj.footballers[1].firstname+" "+obj.footballers[1].lastname+" play for "+obj.footballers[0].Club+"</br>"+obj.footballers[2].firstname+" "+obj.footballers[2].lastname+" is a world class player";
+}
+</script>
+<form>
+<input type="button" value="Parse JSON data" onclick="soccer()"></input>
+</form>
+<p id="soccerplayers"></p>
+</body>
+</html>

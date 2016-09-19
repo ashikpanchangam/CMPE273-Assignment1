@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Input types example</title>
+</head>
+<body>
+	<form name="footballerDetails" action="submit.asp">
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" name="firstName" maxlength="15" required="true" style="width:200px" autofocus/></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lastName" maxlength="15" required="true" style="width:200px"/></td>
+			</tr>
+			
+			<tr>
+				<td>Date Of Birth</td>
+				<td><input type="date" name="dob" style="width:200px" required="true"/></td>
+			</tr>
+			<tr>
+				<td>Foot preference</td>
+				<td><input type="radio" name="foot" value="Right-Footed" checked="true"/>Right-Footed<br />
+					<input type="radio" name="foot" value="Left-Footed"/>Left-Footed<br />
+					<input type="radio" name="foot" value="Ambidextrous"/>Ambidextrous</td>
+					
+			</tr>
+			<tr>
+				<td>Current Club</td>
+				<td><input type="textbox" style="width:200px"></td>
+			</tr>
+			<tr>
+				<td>Salary(in million GBP)</td>
+				<td><input type="salary" id="salaryEarning" name="Salary" style="width:200px"></td>
+			</tr>
+			<tr>
+				<td>Instagram</td>
+				<td><input type="url" name="instagram" style="width:500px"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit details">
+		<input type="reset">
+	</form>
+
+</body>
+</html>

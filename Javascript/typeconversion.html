@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>An example of Type Conversion</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function areaOfCube()
+		{
+			var areaOfCube;
+			try
+			{ 
+				var side = Number(document.getElementById("side").value);
+
+				if (isNaN(side))
+				{
+					alert("Invalid input. Please enter a number");
+				} else
+				{
+					areaOfCube = (6 * side * side);
+					alert("The area of the cube is " + areaOfCube);
+				}
+			}
+			catch(error)
+			{
+				alert(error);
+			}
+		}
+	</script>
+	<label>Enter the length of a side of the cube <input type="text" name="side" id="side"/></label></br></br>
+	<input type="button" value="Calcute Area of Cube" onclick="areaOfCube()"/>
+</body>
+</html>

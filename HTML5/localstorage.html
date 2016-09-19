@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Session Storage Example</title>
+<script>
+document.getElementById("refreshCount").innerHTML = "You" + typeof(Storage);
+function numberOfTimesPageRefreshed()
+{
+	if(typeof(Storage)!=="undefined")
+	{
+		if (sessionStorage.numberOfTimesPageRefreshed)
+		{
+			sessionStorage.numberOfTimesPageRefreshed = Number(sessionStorage.numberOfTimesPageRefreshed) + 1;
+		}
+		else
+		{
+			sessionStorage.numberOfTimesPageRefreshed = 1;
+		}
+		document.getElementById("refreshCount").innerHTML = "You have refreshed the current page " + sessionStorage.numberOfTimesPageRefreshed + " time(s)";
+	}
+	else
+	{
+		document.getElementById("refreshCount").innerHTML = "Browser does not support data storage";
+	}
+}
+</script>
+</head>
+<body onload="numberOfTimesPageRefreshed()">
+<div id="refreshCount"></div>
+</body>
+</html>

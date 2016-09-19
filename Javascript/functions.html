@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Function Example</title>
+<script type="text/javascript">
+function employee(e1, e2)
+{
+	this.e1=e1;
+	this.e2=e2;
+}
+function salary(s1, s2)
+{
+	this.s1=s1;
+	this.s2=s2;
+}
+ var e = new employee("Mark", "Alex");
+ var s = new salary(100, 200);
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+	document.write("Employee "+e.e2+" earns "+s.s1+" every week");
+	document.write("<br>");
+	document.write("Employee "+e.e1+" earns "+s.s2+" every week");
+	</script>
+</body>
+</html>

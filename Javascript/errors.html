@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>An example of try, catch and throw</title>
+<script type="text/javascript">
+	function PlanetName(planetNumber)
+	{
+	   var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
+	   planetNumber = planetNumber-1;
+	   if (planets[planetNumber] !== undefined) 
+	   {
+	      alert("Success!! The Planet name is " +planets[planetNumber]);
+	   } 
+	   else
+	   {
+	      throw new UserDefinedException("The planet does not exist! ", "UserDefinedException");
+	   }
+	}
+	function UserDefinedException(message, name)
+	{
+		   this.message = message;
+		   this.name = name;
+		   alert(message);
+		   alert(name);
+	}
+
+	var _planetName;
+	try 
+	{
+	   var planetNo = 12;
+	   _planetName = PlanetName(planetNo);
+	} 
+	catch(e)
+	{
+	   _planetName = "unknown";
+	   logMyErrors(e.message, e.name);
+	}
+</script>
+</head>
+</html>

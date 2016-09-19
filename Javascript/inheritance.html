@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Inheritance example</title>
+<script type="text/javascript">
+var Industry = function(name)
+{
+	this.name=name;
+}
+
+Industry.prototype.getName = function()
+{
+	return this.name;
+}
+
+var SoftwareCompany = function(netWorth)
+{
+	this.netWorth;
+}
+
+var industry = new Industry("Google");
+SoftwareCompany.prototype =  industry;
+var si = new SoftwareCompany(527000000000);
+document.write(si.getName());
+</script>
+</head>
+</html>
